@@ -51,3 +51,9 @@ public:
         
     }
 };
+
+
+/* Summary
+1. empty node--> root==NULL
+2. How to refer to left/right node? root->left/right
+*/
