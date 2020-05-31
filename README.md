@@ -24,3 +24,4 @@ stack.append('a')
 stack.append('b')
 stack.pop()
 ```
+For stack in CPP, please read [Stack in C++ STL](https://www.geeksforgeeks.org/stack-in-cpp-stl/).
