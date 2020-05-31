@@ -25,3 +25,9 @@ stack.append('b')
 stack.pop()
 ```
 For stack in CPP, please read [Stack in C++ STL](https://www.geeksforgeeks.org/stack-in-cpp-stl/).
+
+For stack problems, the keys are to find:
+* when and what are appended into the stack 
+* when to pop the stack and how to deal with the poped elements 
+* what happens if the stack is empty 
+
