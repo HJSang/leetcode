@@ -6,7 +6,7 @@
 # checks whether there is a 132 pattern in the list.
 
 # Idea: The number which larger than the **third** and before **third** is stored in the stack.
-
+# loop nums from end to begin 
 class Solution:
   def find132pattern(self, nums: List[int]) -> bool:
     stack, s3 = [], -float('Inf')
