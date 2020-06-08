@@ -61,6 +61,7 @@
 
 
 # Idea: accumulate sum until the list is flat 
+# The key is not reset total = 0 in each step.
 
 class Solution: 
   def depthSumInverse(self, nestedList: List[NestedInteger]) -> int:
