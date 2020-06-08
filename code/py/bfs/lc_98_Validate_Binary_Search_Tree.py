@@ -41,4 +41,38 @@ class Solution:
         if root.val>=max_val or root.val<=min_val:
             return False
         return self.checkValidBST(root.left, root.val, min_val) and self.checkValidBST(root.right, max_val, root.val)
-        
+ 
+
+
+# Binary Tree Inorder Traversal 
+def inorderTraversal(root: TreeNode):
+  ans = []
+  if not root:
+    return ans
+  stack = []
+  while root or stack:
+    while root:
+      stack.append(root)
+      root = root.left
+    root = stack.pop()
+    ans.append(root.val)
+    root = root.right
+  return ans      
+
+
+# Use Inorder Traversal 
+def IsValidBST(root: TreeNode) -> bool:
+  if not root:
+    return True
+  stack = []
+  pre = None
+  while root or stack:
+    while root:
+      stack.append(root)
+      root = root.left
+    root = stack.pop()
+    if not pre and root.val <= pre.val:
+      return False
+    pre = root
+    root = root.right
+  return True    
