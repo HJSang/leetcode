@@ -28,6 +28,7 @@ class Solution(object):
         :rtype: List[str]
         """
         from collections import defaultdict
+        # create a dict: key is the origin and the value is the list of dest.
         self.flightMap = defaultdict(list)
 
         for ticket in tickets:
