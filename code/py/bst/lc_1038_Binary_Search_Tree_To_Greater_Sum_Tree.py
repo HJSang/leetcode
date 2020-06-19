@@ -30,4 +30,19 @@ class Solution:
         if root.left: self.bstToGst(root.left)
         return root
 
-
+# Iterative way
+class Solution:
+    def bstToGst(self, root: TreeNode) -> TreeNode:
+        val = 0
+        stack = []
+        node = root
+        while node or stack:
+            while node:
+                stack.append(node)
+                node = node.right
+            node = stack.pop()
+            node.val +=val
+            val = node.val
+            node = node.left
+            
+        return root   
