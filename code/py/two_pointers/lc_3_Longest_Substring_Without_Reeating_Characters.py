@@ -27,14 +27,20 @@
 
 class Solution:
   def lengthOfLongestSubstring(self, s:str) -> int:
+    # Initialize ans = 0
     ans = 0
+    # use  a dict to save the value and index visted
     visited = {}
-    start, end = 0,0
+    # Initialize start index as 0
+    start = 0
     for i, c in enumerate(s):
-      # if repeated
+      # if repeated: c in visited & start <= the index
       if c in visited and start <= visited[c]:
+        # update the start index to next of seen value index
         start = visited[c]+1
       else:
+        # no repeat, then update the length 
         ans = max(ans, i-start+1)
-      seen[c] = i
+      # update the visited dict
+      visited[c] = i
     return ans
