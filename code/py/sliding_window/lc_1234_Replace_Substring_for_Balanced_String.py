@@ -38,4 +38,20 @@
 # s.length is a multiple of 4
 # s contains only 'Q', 'W', 'E' and 'R'.
 
-
+class Solution:
+    def balancedString(self, s: str) -> int:
+        # Create count dict
+        count = collections.Counter(s)
+        # why res = n: the maximum value for res is n?
+        res = n = len(s)
+        i = 0
+        for j, c in enumerate(s):
+            count[c] -= 1
+            # why i<n to avoid index out of range
+            # check condition for balanced cases
+            while i < n and all(n / 4 >= count[c] for c in 'QWER'):
+                res = min(res, j - i + 1)
+                count[s[i]] += 1
+                i += 1
+        return res
+        
