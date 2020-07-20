@@ -30,4 +30,17 @@
 # 1 <= arr[i] <= 15
 # It is guaranteed that the answer fits into a 32-bit signed integer (ie. it is less than 2^31).
 
-
+class Solution:
+    def mctFromLeafValues(self, arr: List[int]) -> int:
+        # 2d-DP
+        self.memo = {}
+        def dp(i,j):
+            if j<=i:
+                return 0
+            if (i,j) not in self.memo:
+                res = float('inf')
+                for k in range(i+1,j+1):
+                    res = min(dp(i,k-1)+dp(k,j)+max(arr[i:k])*max(arr[k:j+1]),res)
+                self.memo[(i,j)] = res
+            return self.memo[(i,j)]
+        return dp(0,len(arr)-1)  
