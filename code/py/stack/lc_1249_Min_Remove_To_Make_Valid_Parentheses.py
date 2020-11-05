@@ -40,3 +40,22 @@
 # 
 #
 
+
+class Solution:
+    def minRemoveToMakeValid(self, s: str) -> str:
+        stack = []
+        remove = []
+        for index, val in enumerate(s):
+            if val == "(":
+                stack.append(index)
+            elif val == ")" and stack:
+                stack.pop()
+            elif val == ")":
+                remove.append(index)
+
+        res = ""
+        ind = list(range(len(s)))
+        ind = [i for i in ind if i not in remove+stack]
+        for i in ind:
+            res += s[i]
+        return res
